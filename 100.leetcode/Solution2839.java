@@ -29,7 +29,7 @@ public class Solution2839{
     }
     public static void main(String[] args) {
         String s1 = "abcd";
-        String s2 = "cbad";
+        String s2 = "cbab";
         System.out.println(canBeEqual(s1,s2));
     }
 }
