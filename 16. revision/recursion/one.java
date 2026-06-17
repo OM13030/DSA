@@ -104,9 +104,24 @@ public class one{
         else{
             map[currChar - 'a'] = true;
             removeDuplicates(str, idx+1, newStr.append(currChar), map);
+        }  
+    } 
+    public static int friendspairing(int n){
+        if(n == 1 || n == 2){
+            return n;
         }
-    }
+        //choice
+        //singel
+        int fnm1 = friendspairing(n-1);
 
+        //pair
+        int fnm2 = friendspairing(n-2);
+        int pairWays = (n-1) * fnm2;
+
+        //totways
+        int totways = fnm1 + pairWays;
+        return totways;
+    }
 
 
     public static void main(String[] args) {
