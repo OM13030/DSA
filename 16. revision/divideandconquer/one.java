@@ -53,6 +53,40 @@ public class one{
         }
     }
 
+    public static void quicksort(int arr[] , int si , int ei){
+
+
+
+         //last element
+         int pidx = partition(arr, si , ei);
+         quicksort(arr, si, pidx-1);   //left
+         quicksort(arr, pidx+1, ei);   //right
+         
+    }
+
+    public static int partition(int arr[] , int si , int ei){
+        int pivot = arr[ei];
+        int i = si-1;
+        for(int j = si; j<ei; j++){
+            if(arr[j] <= pivot){
+                i++;
+                //swaping
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+
+        i++;
+        //swaping for pivot 
+        int temp = pivot;
+        arr[si] = arr[i];// pivot = arr[i]
+        arr[i] = temp;
+        return i; 
+
+          
+    }
+
 
     public static void main(String[] args) {
         int arr[] = {21,3,5,45,65,2,34,7};
