@@ -14,14 +14,33 @@ public class example{
      }
 
      public static void printArr(int arr[]){
+
+
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+ " ");
         }
         System.out.println();
      }
-    public static void main(String[] args) {
+
+    public static void findSubsets(String str , String ans , int i){
+        //base case
+        if(i == str.length()){
+            System.out.println(ans);
+            return;
+        }
+
+        //yes choice
+        findSubsets(str, ans + str.charAt(i), i+1);
+
+        // no choice
+        findSubsets(str, ans, i+1);
+    }
+    public static void main(String[] args) { 
+
         int arr[] = new int [5];
         changeArray(arr, 0, 1);
         printArr(arr);
+        String str = "abc";
+        findSubsets(str, "",0);
     }
 }
