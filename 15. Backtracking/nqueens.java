@@ -84,7 +84,7 @@ public class nqueens{
                 board[i][j] = 'X';
             }
         }
-
+        nQueens(board,0);
         nQueensWays(board, 0);
         System.out.println("total ways to solve nqueens problem is : " + count);
     }
