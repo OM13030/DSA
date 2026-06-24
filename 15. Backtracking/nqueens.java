@@ -88,4 +88,4 @@ public class nqueens{
         nQueensWays(board, 0);
         System.out.println("total ways to solve nqueens problem is : " + count);
     }
-} 
+}  
