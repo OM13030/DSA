@@ -1,4 +1,25 @@
 public class sudoku{
+
+    public static boolean sudokuSolver(int sudoku[][], int row , int col){
+        //base case
+        //recurrsion
+        int nextRow = row, nextCol = col+1;
+        if(col+1 == 9){
+            nextRow = row + 1;
+            nextCol = 0;
+        }
+
+        for (int digit = 1; digit < 9; digit++) {
+            if(isSafe(sudoku, row , col, digit)){
+                sudoku[row][col] = digit;
+                if(sudokuSolver(sudoku, nextRow, nextCol)){
+                    return true; 
+                }
+            }
+        }
+
+
+    }
     public static void main(String[] args) {
         int sudoku[][] = {{0,0,8,0,0,0,0,0,0},
         { 4, 9, 0, 1, 5, 7, 0, 0, 2},
