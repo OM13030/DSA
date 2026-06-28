@@ -1,12 +1,9 @@
-import java.util.ArrayList;
 
-public class swap{
+import java.util.*;
+import static java.util.Collections.sort;
 
-    public static void swap(ArrayList<Integer> list, int idx1,int  idx2){
-        int temp = list.get(idx1);
-        list.set(idx1, list.get(idx2));
-        list.set(idx2, temp);
-    }
+
+public class sorting{
     public static void main(String[] args) {
           ArrayList<Integer> list = new ArrayList();
         //operation to add the element in the arraylist
@@ -16,9 +13,12 @@ public class swap{
         list.add(4);
         list.add(2);
 
-        int idx1 = 1, idx2 = 3; 
         System.out.println(list);
-        swap(list, idx1, idx2);
+        Collections.sort(list);
+        System.out.println(list);
+
+        //descending order
+        Collections.sort(list, Collections.reverseOrder());
         System.out.println(list);
     }
 }
