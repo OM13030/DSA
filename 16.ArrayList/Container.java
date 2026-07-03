@@ -3,7 +3,30 @@ import java.util.ArrayList;
 
 public class Container{
 
-    
+    public static int StoreWaterOptimized(ArrayList<Integer> height){
+        int maxwater = 0;
+        int lp = 0;
+        int rp = height.size()-1;
+
+        while(lp < rp){
+            // 
+            int ht = Math.min(height.get(lp), height.get(rp));
+            int width = rp-lp;
+            int currwater = ht * width;
+            maxwater = Math.max(maxwater,currwater);
+
+            //update ptr
+
+            if(height.get(lp) < height.get(rp)){
+                lp++;
+            }
+            else{
+                rp--;
+            }
+
+        }
+        return maxwater;
+    }
 
     public static int StoreWater(ArrayList<Integer> height){
         int maxwater = 0;
@@ -32,7 +55,7 @@ public class Container{
         height.add(3);
         height.add(7);
 
-        System.out.println(StoreWater(height));
+        System.out.println(StoreWaterOptimized(height));
 
         }
 }
