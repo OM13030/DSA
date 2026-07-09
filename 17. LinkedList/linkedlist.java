@@ -13,10 +13,12 @@ public class linkedlist{
 
     public static Node head; 
     public static Node tail;
+    public static int size;  // to define the size of the linkedlist
 
     public void addfirst(int data){
         //step1 = create new node
         Node newNode = new Node(data);
+        size++;
 
         if(head == null){
             head = tail = newNode;
@@ -34,6 +36,7 @@ public class linkedlist{
     public void addlast(int data){
         // step1 = create a new node
         Node newNode = new Node(data);
+        size++;
 
         if(head == null){
             head = tail = newNode;
@@ -64,6 +67,28 @@ public class linkedlist{
     }
 
 
+    public void addtomiddle(int idx , int data){
+        if(idx == 0){
+            addfirst(data);
+            return;
+        }
+        Node newNode = new Node(data);
+        size++;
+        Node temp = head;
+        int i = 0;
+
+        while(i < idx-1){
+            temp = temp.next;
+            i++;
+        }
+        
+        //i = idx-1; temp -> prev
+        newNode.next =temp.next;
+        temp.next = newNode;
+
+    }
+
+
     public static void main(String[] args) {
         linkedlist ll = new linkedlist();
         ll.addfirst(2);
@@ -74,6 +99,9 @@ public class linkedlist{
         ll.printll();
         ll.addlast(4);
         ll.printll();
+        ll.addtomiddle(2, 9);
+        ll.printll();
+        System.out.println(ll.size);
         
     }
 }
