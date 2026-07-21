@@ -100,9 +100,116 @@ public class basic{
         }
     }
 
+    public static void ZeroOneTriangle(int n){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= i; j++){
+                if((i+j) % 2 == 0){
+                    System.out.print("1");
+                }else{
+                    System.out.print("0");
+                }
+                
+            }
+            System.out.println();
+        }
+    }
+
+    public static void starPlus(int n){
+        int mid = (n/2) + 1;
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if(i == mid || j == mid){
+                    System.out.print("*"+ " ");
+                }else{
+                    System.out.print(" "+ " ");
+                }
+                
+                
+            }
+            System.out.println();
+        }
+    }
+
+    public static void HollowRectangle(int n){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if(i == 1 || j == 1 || i == n || j == n){
+                    System.out.print("*"+ " ");
+                }else{
+                    System.out.print(" "+ " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void CrossStar(int n){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if(i == j || j == (n+1)-i){
+                    System.out.print("*"+ " ");
+                }else{
+                    System.out.print(" "+ " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public static void StarTriangleReverse(int n){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n; j++){
+                if( j >= (n+1)-i){
+                    System.out.print("*"+ " ");
+                }else{ 
+                    System.out.print(" "+ " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void NumberTriangleReverse(int n){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n-i;j++){
+                System.out.print(" "+" ");
+            }
+            for(int j = 1; j <= i;j++){
+                System.out.print(j+" ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void Rhombus(int n){
+        for(int i = 1; i <= n; i++){
+            for(int j = 1; j <= n-i; j++){
+                System.out.print(" ");
+            }
+            for(int k = 0; k <= n; k++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void StarPyramid(int n){
+        for(int i = 1; i <= n; i++){
+            for(int k = 1; k <= n-i; k++){
+                System.out.print(" "+ " ");
+            }
+            for(int j = 1; j <= (2*i)-1; j++){
+                System.out.print("*" + " ");
+            }
+            
+            System.out.println();
+        }
+    }
+
+
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 6;
         int m = 5;
         // for(int i = 1; i <= n; i++){
         //     for(int j = 1;j <= m; j++){
@@ -110,6 +217,6 @@ public class basic{
         //     }
         //     System.out.println();
         // }
-       floydTriangle(n);
+       StarPyramid(n);
     }
 }
