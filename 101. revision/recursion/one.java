@@ -1,7 +1,7 @@
 public class one{
     public static void printdec(int n) {
         if(n == 1){
-            System.out.print(n);
+            System.out.print(n + " ");
             return;
         }
          
@@ -126,7 +126,8 @@ public class one{
 
     public static void main(String[] args) {
         int arr[] = {2,4,45,67,4,2,6,7,5,2};
-        System.out.println(lastoccurance(arr, 0, 4));
+        int n = 5;
+        printdec(n);
 
     }
 }
